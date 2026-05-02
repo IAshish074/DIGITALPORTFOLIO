@@ -14,7 +14,8 @@ const Contact = () => {
     e.preventDefault();
     setStatus('Sending...');
     try {
-      const response = await fetch('/api/contact', {
+      const apiUrl = import.meta.env.VITE_API_URL || '';
+      const response = await fetch(`${apiUrl}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -157,7 +158,8 @@ const Contact = () => {
             e.preventDefault();
             const email = e.target.subEmail.value;
             try {
-              const res = await fetch('/api/subscribe', {
+              const apiUrl = import.meta.env.VITE_API_URL || '';
+              const res = await fetch(`${apiUrl}/api/subscribe`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email }),
