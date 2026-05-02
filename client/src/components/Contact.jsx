@@ -14,7 +14,7 @@ const Contact = () => {
     e.preventDefault();
     setStatus('Sending...');
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || '';
+      const apiUrl = import.meta.env.VITE_API_URL || 'https://digitalportfolioserver.onrender.com';
       const response = await fetch(`${apiUrl}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -158,7 +158,7 @@ const Contact = () => {
             e.preventDefault();
             const email = e.target.subEmail.value;
             try {
-              const apiUrl = import.meta.env.VITE_API_URL || '';
+              const apiUrl = import.meta.env.VITE_API_URL || 'https://digitalportfolioserver.onrender.com';
               const res = await fetch(`${apiUrl}/api/subscribe`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
